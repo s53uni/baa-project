@@ -4,9 +4,14 @@ from .completion_executor import CompletionExecutor
 import json
 import markdown
     
+def health(request):
+    return render(request, 
+                  "mainapp/health.html",
+                  {})
+
 def diagnosis_detail(request):
-    response_data = "안녕"
-    user_input = "안녕"
+    response_data = ""
+    user_input = ""
  
     completion_executor = CompletionExecutor(
         host='https://clovastudio.stream.ntruss.com',
@@ -42,12 +47,10 @@ def diagnosis_detail(request):
                    "user_input":user_input})
     
 def diagnosis(request):
-
     return render(request, 
                   "mainapp/diagnosis.html",
                   {})
 
-# 메인 페이지
 def main(request):
     return render(request,
                   "mainapp/main.html",

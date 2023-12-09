@@ -15,30 +15,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="header__container">
-            <!-- header logo -->
-            <div class="header__logo">
-                <a href="/"><img class="header__img" src="/static/images/isix_text_logo.png"></a>
-                <a href="#" class="navbar__toggleBtn">
-                    <i class="fa-solid fa-bars" style="color: #1f4568;"></i>
-                </a>
-            </div>
-            <!-- header menu -->
-            <div class="header__menu">
-                <nav id="navbar" class="header__nav">
-                    <ul class="header__elenco">
-                        <li class="header__el">
-                            <a href="/planning/?part_no=part6" class="header__link header__plan">부품 생산 계획</a>
-                        </li>
-                        <li class="header__el">
-                            <a href="/monitoring/cast_proc" class="header__link header__monitor">공정 모니터링</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
     <!-- title -->
     <div class="titlebox">
         <div class="maintitle">
@@ -70,6 +46,7 @@
             Copyright © BAA 2023
         </span>
     </div>
+    
     <script type="text/javascript">
         const userInput = document.getElementById('userInput'); // 사용자 입력 필드
         const loadingIndicator = document.getElementById('loading-indicator'); // 로딩 표시 요소
