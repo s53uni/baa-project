@@ -24,7 +24,7 @@
             건강검진 결과를 입력하면 관련된 질병을 예측하여 보여줍니다.
         </div>
     </div>
-    <form class="form" method="post" action="#">
+    <form class="form" id="submit-form" method="post" action="#">
         {% csrf_token %}
             <label for="height">키 (cm)</label>
             <input type="number" id="height" name="height" placeholder="키를 입력하세요">
@@ -61,6 +61,9 @@
             
             <label for="name">혈색소(g/dL)</label>
             <input type="text" id="hemoglobin" name="hemoglobin" placeholder="혈색소를 입력하세요" required>
+
+            <label for="name">요단백:</label>
+            <input type="text" id="proteinuria" name="proteinuria" placeholder="요단백을 입력하세요" required>
             
             <label for="name">혈청 크레아티닌</label>
             <input type="text" id="serum_creatinine" name="serum_creatinine" placeholder="혈청 크레아티닌을 입력하세요" required>
@@ -68,7 +71,7 @@
             <label for="name">감마 지티피</label>
             <input type="text" id="gamma_gtp" name="gamma_gtp" placeholder="감마 지티피를 입력하세요" required>
 
-        <button type="submit" id="send-button">제출</button>
+        <button type="submit" id="send-button" onclick="goSubmit()">제출하기</button>
     </form>
     <!-- footer -->
     <div class="footer">
@@ -76,5 +79,29 @@
             Copyright © BAA 2023
         </span>
     </div>
+    <script type="text/javascript">
+        function goSubmit() {
+            fm = document.getElementById("submit-form");
+        
+            height = fm.height.value;
+            weight = fm.weight.value;
+            sex = fm.sex.value;
+            area = fm.area.value;
+            systolic = fm.systolic.value;
+            diastolic = fm.diastolic.value;
+            ast = fm.ast.value;
+            alt = fm.alt.value;
+            blood_sugar = fm.blood_sugar.value;
+            total_cholesterol = fm.total_cholesterol.value;
+            triglycerides = fm.triglycerides.value;
+            hemoglobin = fm.hemoglobin.value;
+            proteinuria = fm.proteinuria.value;
+            serum_creatinine = fm.serum_creatinine.value;
+            gamma_gtp = fm.gamma_gtp.value;
+
+            fm.action = "/health_detail";
+            fm.submit();
+        }
+    </script>
 </body>
 </html>

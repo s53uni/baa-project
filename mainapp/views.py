@@ -3,14 +3,34 @@ from django.http import HttpResponse
 from .completion_executor import CompletionExecutor
 import json
 import markdown
-    
+
+### 클래스 불러오기
+from mainapp.pyfiles.health import Pred_Model
     
 def health_detail(request):
-    mem_login_id = request.POST.get("mem_login_id","")
-    mem_login_pass = request.POST.get("mem_login_pass","")
+    height = request.POST.get("height","")
+    weight = request.POST.get("weight","")
+    sex = request.POST.get("sex","")
+    area = request.POST.get("area","")
+    systolic = request.POST.get("systolic","")
+    diastolic = request.POST.get("diastolic","")
+    ast = request.POST.get("ast","")
+    alt = request.POST.get("alt","")
+    blood_sugar = request.POST.get("blood_sugar","")
+    total_cholesterol = request.POST.get("total_cholesterol","")
+    triglycerides = request.POST.get("triglycerides","")
+    hemoglobin = request.POST.get("hemoglobin","")
+    proteinuria = request.POST.get("proteinuria","")
+    serum_creatinine = request.POST.get("serum_creatinine","")
+    gamma_gtp = request.POST.get("gamma_gtp","")
+    
+    list_result = Pred_Model.runModel(height, weight, sex, area, systolic, diastolic, ast, alt,
+                             blood_sugar, total_cholesterol, triglycerides,
+                             hemoglobin, proteinuria, serum_creatinine, gamma_gtp)
+    
     return render(request, 
                   "mainapp/health_detail.html",
-                  {})
+                  {"list_result":list_result})
     
 def health(request):
     return render(request, 

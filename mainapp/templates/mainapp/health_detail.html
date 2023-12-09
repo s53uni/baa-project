@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맞춤형 건강관리 서비스</title>
+    <!-- font.css 가져오기 -->
+    <link rel="stylesheet" href="{% static 'mainapp/css/font.css'%}">
+
+    <!-- health.css 가져오기 -->
+    <link rel="stylesheet" href="{% static 'mainapp/css/health.css'%}">
+
+    <!-- jquery 가져오기 -->    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <!-- title -->
+    <div class="titlebox">
+        <div class="maintitle">
+            맞춤형 질병 예측 서비스
+        </div>
+        <div class="subtitle">
+            건강검진 결과를 입력하면 관련된 질병을 예측하여 보여줍니다.
+        </div>
+    </div>
+    
+    
+    <!-- footer -->
+    <div class="footer">
+        <span class="copyright">
+            Copyright © BAA 2023
+        </span>
+    </div>
+</body>
+</html>

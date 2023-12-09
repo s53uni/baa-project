@@ -6,10 +6,11 @@ import pandas as pd
 
 class Pred_Model :
     def __init__(self) :
-        self.runModel()
-    def runModel(self, result_bmi, result_map, result_aaa,
-                 blood_sugar, total_cholesterol, triglycerides,
-                 hemoglobin, proteinuria, serum_creatinine, gamma_gtp, area, sex) :
+        self.temp = 0
+    def runModel(self, height, weight, sex, area, systolic, diastolic, ast, alt,
+                             blood_sugar, total_cholesterol, triglycerides,
+                             hemoglobin, proteinuria, serum_creatinine, gamma_gtp) :
+        
         files = glob.glob('./*.pickle')
 
         i = 1
@@ -21,31 +22,23 @@ class Pred_Model :
         with open('model_scaler.pickle', 'rb') as f: 
             scaler = pickle.load(f)
             
-        """result_bmi = 40
-        result_map = 3
-        result_aaa = 4
-        blood_sugar = 250.0
-        total_cholesterol = 119.0
-        triglycerides = 265.0
-        hemoglobin = 15.7
-        proteinuria = 1.0
-        serum_creatinine = 0
-        gamma_gtp = 35.0
-        area = 42
-        sex = 2"""
 
+        result_bmi = weight / ((height/100)**2)
+        result_map = (2*diastolic+systolic)/3
+        result_aaa   = ast/alt
+        
         col = ['bmi', 'map', '식전혈당(공복혈당)', '총 콜레스테롤', '트리글리세라이드',
             '혈색소', '요단백', '혈청크레아티닌', '감마 지티피']
 
-        df1 = pd.DataFrame([result_bmi, result_map, result_aaa, blood_sugar, total_cholesterol,
-                            triglycerides, hemoglobin, proteinuria, gamma_gtp]).transpose()
+        df1 = pd.DataFrame([result_bmi, result_map, blood_sugar, total_cholesterol,
+                            triglycerides, hemoglobin, proteinuria, serum_creatinine, gamma_gtp]).transpose()
         df1.columns = col
 
         df1 = pd.DataFrame(scaler.transform(df1), columns=col)
 
         col2 = ['시도코드', '성별코드', 'ast_alt2']
 
-        df2 = pd.DataFrame([area, sex, serum_creatinine]).transpose()
+        df2 = pd.DataFrame([area, sex, result_aaa]).transpose()
 
         df2.columns = col2
 
@@ -55,6 +48,7 @@ class Pred_Model :
                     '제주':49, '전국':99}})
         
         df = pd.concat([df1, df2], axis=1)
+        
         
         list_result = []
         for j, kcd in zip(range(1,6), ['당뇨병', '고혈압', '감기', '기관지염', '경추간판장애']):
