@@ -27,13 +27,13 @@ body {
     color: rgb(77, 77, 77);
 }
 .form {
-    font-size:16px;
+    font-size:15px;
     display: flex;
     flex-direction: column;
     align-items: center;    
     justify-content: center;
     text-align: center;
-    max-width: 700px;
+    max-width: 500px;
     min-height: 320px;
     margin: 20px auto;
     padding: 20px;
@@ -43,13 +43,34 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     line-height: 40px;
 }
+
 .form input {
     font-family: "Pretendard", sans-serif;
     width:300px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size:14px;
+    margin-bottom: 10px;
+}
+#send-button {
+    font-family: "Pretendard", sans-serif;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 35px;  
     font-size:16px;
+    margin: 20px 0;
+    background-color: #3759ee;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+ 
+#send-button:hover {
+    background-color: #1b3eb0;
 }
 .footer {
     margin-top:50px;

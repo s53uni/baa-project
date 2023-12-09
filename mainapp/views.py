@@ -4,6 +4,14 @@ from .completion_executor import CompletionExecutor
 import json
 import markdown
     
+    
+def health_detail(request):
+    mem_login_id = request.POST.get("mem_login_id","")
+    mem_login_pass = request.POST.get("mem_login_pass","")
+    return render(request, 
+                  "mainapp/health_detail.html",
+                  {})
+    
 def health(request):
     return render(request, 
                   "mainapp/health.html",

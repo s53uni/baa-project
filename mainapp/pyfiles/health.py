@@ -1,0 +1,65 @@
+### 라이브러리
+import glob
+import pickle
+import pandas as pd
+
+
+class Pred_Model :
+    def __init__(self) :
+        self.runModel()
+    def runModel(self, result_bmi, result_map, result_aaa,
+                 blood_sugar, total_cholesterol, triglycerides,
+                 hemoglobin, proteinuria, serum_creatinine, gamma_gtp, area, sex) :
+        files = glob.glob('./*.pickle')
+
+        i = 1
+        for file in files:
+            with open(file,'rb') as f:
+                globals()['model{}'.format(i)] = pickle.load(f)
+            i += 1
+            
+        with open('model_scaler.pickle', 'rb') as f: 
+            scaler = pickle.load(f)
+            
+        """result_bmi = 40
+        result_map = 3
+        result_aaa = 4
+        blood_sugar = 250.0
+        total_cholesterol = 119.0
+        triglycerides = 265.0
+        hemoglobin = 15.7
+        proteinuria = 1.0
+        serum_creatinine = 0
+        gamma_gtp = 35.0
+        area = 42
+        sex = 2"""
+
+        col = ['bmi', 'map', '식전혈당(공복혈당)', '총 콜레스테롤', '트리글리세라이드',
+            '혈색소', '요단백', '혈청크레아티닌', '감마 지티피']
+
+        df1 = pd.DataFrame([result_bmi, result_map, result_aaa, blood_sugar, total_cholesterol,
+                            triglycerides, hemoglobin, proteinuria, gamma_gtp]).transpose()
+        df1.columns = col
+
+        df1 = pd.DataFrame(scaler.transform(df1), columns=col)
+
+        col2 = ['시도코드', '성별코드', 'ast_alt2']
+
+        df2 = pd.DataFrame([area, sex, serum_creatinine]).transpose()
+
+        df2.columns = col2
+
+        df2 = df2.replace({'성별코드':{'남자':1, '여자':2},
+            '시도코드':{'서울':11, '부산':26, '대구':27, '인천':28, '광주':29, '대전':30, '울산':31,
+                    '경기':41, '강원':42, '충북':43, '충남':44, '전북':45, '전남':46, '경북':47, '경남':48,
+                    '제주':49, '전국':99}})
+        
+        df = pd.concat([df1, df2], axis=1)
+        
+        list_result = []
+        for j, kcd in zip(range(1,6), ['당뇨병', '고혈압', '감기', '기관지염', '경추간판장애']):
+            a = globals()['model{}'.format(j)].predict_proba(df)[0][1]
+            '{}이(가) 발병할 확률은 {:.3f}%입니다 '.format(kcd, a*100)
+            list_result.append('{}이(가) 발병할 확률은 {:.3f}%입니다 '.format(kcd, a*100))
+            
+        return list_result
