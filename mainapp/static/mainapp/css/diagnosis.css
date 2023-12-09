@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: "Pretendard", sans-serif;
+    flex-grow: 0;
+    background-color: #f9fbfc;
+}
+.titlebox {
+    display:block;
+    align-items: center;
+    justify-content: center;
+}
+.maintitle {
+    margin-top:100px;
+    background-image: linear-gradient(98deg, #3a8ef6 -8%, #6f3afa 195%);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle {
+    margin:10px 0 40px 0;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    color: rgb(77, 77, 77);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+}
+
+#userInput {
+    font-family: "Pretendard", sans-serif;
+    width:300px;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size:14px;
+}
+ 
+#send-button {
+    font-family: "Pretendard", sans-serif;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 35px;  
+    font-size:16px;
+    margin: 20px 0;
+    background-color: #3759ee;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+ 
+#send-button:hover {
+    background-color: #1b3eb0;
+}
+.footer {
+    margin-top:50px;
+    padding : 15px;
+    background-color: #0a0e31;
+    text-align: center;
+}     
+.copyright {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.chat-container {
+    max-width: 1000px;
+    min-height: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+
+.loading-indicator {
+    margin-top: 120px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+ 
+.spinner {
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #3768ee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+ 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.load_data {
+    font-size :16px;
+    color:rgb(53, 53, 53);
+    line-height: 30px;
+}
