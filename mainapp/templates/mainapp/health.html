@@ -24,55 +24,60 @@
             건강검진 결과를 입력하면 관련된 질병을 예측하여 보여줍니다.
         </div>
     </div>
-    <form class="form" id="submit-form" method="post" action="#">
+    <form class="form" id="submit-form" method="post" action="/health_detail">
         {% csrf_token %}
             <label for="height">키 (cm)</label>
-            <input type="number" id="height" name="height" placeholder="키를 입력하세요">
+            <input type="number" id="height" name="height" value="165" placeholder="키를 입력하세요">
 
             <label for="weight">체중 (kg)</label>
-            <input type="number" id="weight" name="weight" placeholder="체중을 입력하세요" required>
+            <input type="number" id="weight" name="weight" value="80" placeholder="체중을 입력하세요" required>
 
             <label for="weight">성별</label>
-            <input type="text" id="sex" name="sex" placeholder="성별을 입력하세요" required>
+            <input type="text" id="sex" name="sex" value="남자" placeholder="성별을 입력하세요" required>
             
             <label for="weight">지역</label>
-            <input type="text" id="area" name="area" placeholder="지역을 입력하세요" required>
+            <input type="text" id="area" name="area" value="충남" placeholder="지역을 입력하세요" required>
             
             <label for="height">수축기 혈압</label>
-            <input type="number" id="systolic" name="systolic" placeholder="수축기 혈압을 입력하세요" required>
+            <input type="number" id="systolic" name="systolic" value="112" placeholder="수축기 혈압을 입력하세요" required>
             
             <label for="weight">이완기 혈압</label>
-            <input type="number" id="diastolic" name="diastolic" placeholder="이완기 혈압을 입력하세요" required>
+            <input type="number" id="diastolic" name="diastolic" value="73" placeholder="이완기 혈압을 입력하세요" required>
             
             <label for="height">AST</label>
-            <input type="number" id="ast" name="ast" placeholder="AST를 입력하세요" required>
+            <input type="number" id="ast" name="ast" value="18" placeholder="AST를 입력하세요" required>
             
             <label for="weight">ALT</label>
-            <input type="number" id="alt" name="alt" placeholder="ALT를 입력하세요" required>
+            <input type="number" id="alt" name="alt" value="20" placeholder="ALT를 입력하세요" required>
             
             <label for="name">식전 혈당</label>
-            <input type="text" id="blood_sugar" name="blood_sugar" placeholder="식전 혈당을 입력하세요" required>
+            <input type="number" id="blood_sugar" name="blood_sugar" value="250" placeholder="식전 혈당을 입력하세요" required>
             
             <label for="name">총 콜레스테롤</label>
-            <input type="text" id="total_cholesterol" name="total_cholesterol" placeholder="총 콜레스테롤을 입력하세요" required>
+            <input type="number" id="total_cholesterol" name="total_cholesterol" value="119" placeholder="총 콜레스테롤을 입력하세요" required>
             
             <label for="name">트리글리세라이드</label>
-            <input type="text" id="triglycerides" name="triglycerides" placeholder="트리글리세라이드" required>
+            <input type="number" id="triglycerides" name="triglycerides" value="265" placeholder="트리글리세라이드" required>
             
             <label for="name">혈색소(g/dL)</label>
-            <input type="text" id="hemoglobin" name="hemoglobin" placeholder="혈색소를 입력하세요" required>
+            <input type="number" id="hemoglobin" name="hemoglobin" value="15.7" placeholder="혈색소를 입력하세요" required>
 
             <label for="name">요단백:</label>
-            <input type="text" id="proteinuria" name="proteinuria" placeholder="요단백을 입력하세요" required>
+            <input type="number" id="proteinuria" name="proteinuria" value="1" placeholder="요단백을 입력하세요" required>
             
             <label for="name">혈청 크레아티닌</label>
-            <input type="text" id="serum_creatinine" name="serum_creatinine" placeholder="혈청 크레아티닌을 입력하세요" required>
+            <input type="number" id="serum_creatinine" name="serum_creatinine" value="0.7" placeholder="혈청 크레아티닌을 입력하세요" required>
             
             <label for="name">감마 지티피</label>
-            <input type="text" id="gamma_gtp" name="gamma_gtp" placeholder="감마 지티피를 입력하세요" required>
+            <input type="number" id="gamma_gtp" name="gamma_gtp" value="35" placeholder="감마 지티피를 입력하세요" required>
 
         <button type="submit" id="send-button" onclick="goSubmit()">제출하기</button>
     </form>
+    <div class="buttondiv">
+        <div class="gobutton">
+            <a href="/diagnosis">→ AI 진단 서비스가기</a>
+        </div>
+    </div>
     <!-- footer -->
     <div class="footer">
         <span class="copyright">

@@ -24,8 +24,16 @@
             건강검진 결과를 입력하면 관련된 질병을 예측하여 보여줍니다.
         </div>
     </div>
-    
-    
+    <div class="dataform">
+        {% for data in list_result%}
+            <div>{{ data }}</div>
+        {% endfor %}
+    </div>
+    <div class="buttondiv">
+        <div class="gobutton">
+            <a href="/diagnosis">→ AI 진단 서비스가기</a>
+        </div>
+    </div>
     <!-- footer -->
     <div class="footer">
         <span class="copyright">

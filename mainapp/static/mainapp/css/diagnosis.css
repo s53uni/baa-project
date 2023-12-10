@@ -114,3 +114,31 @@ body {
     color:rgb(53, 53, 53);
     line-height: 30px;
 }
+.buttondiv {
+    display:flex;
+    flex-direction: row-reverse;
+}
+.gobutton {
+    font-family: "Pretendard", sans-serif;
+    width:200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 11px 35px;  
+    font-size:16px;
+    margin: 20px 50px 0 0;
+    background-color: #b5b5b5;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.gobutton:hover {
+    background-color: #828282;
+}
+.gobutton a {
+    text-decoration: none;
+    color: #fff;
+}

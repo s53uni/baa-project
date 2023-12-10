@@ -8,23 +8,24 @@ import markdown
 from mainapp.pyfiles.health import Pred_Model
     
 def health_detail(request):
-    height = request.POST.get("height","")
-    weight = request.POST.get("weight","")
-    sex = request.POST.get("sex","")
-    area = request.POST.get("area","")
-    systolic = request.POST.get("systolic","")
-    diastolic = request.POST.get("diastolic","")
-    ast = request.POST.get("ast","")
-    alt = request.POST.get("alt","")
-    blood_sugar = request.POST.get("blood_sugar","")
-    total_cholesterol = request.POST.get("total_cholesterol","")
-    triglycerides = request.POST.get("triglycerides","")
-    hemoglobin = request.POST.get("hemoglobin","")
-    proteinuria = request.POST.get("proteinuria","")
-    serum_creatinine = request.POST.get("serum_creatinine","")
-    gamma_gtp = request.POST.get("gamma_gtp","")
+    height = float(request.POST.get("height",165))
+    weight = float(request.POST.get("weight",80))
+    sex = request.POST.get("sex","남자")
+    area = request.POST.get("area","충남")
+    systolic = float(request.POST.get("systolic",112))
+    diastolic = float(request.POST.get("diastolic",73))
+    ast = float(request.POST.get("ast",18))
+    alt = float(request.POST.get("alt",20))
+    blood_sugar = float(request.POST.get("blood_sugar",250))
+    total_cholesterol = float(request.POST.get("total_cholesterol",119))
+    triglycerides = float(request.POST.get("triglycerides",265))
+    hemoglobin = float(request.POST.get("hemoglobin",15.7))
+    proteinuria = float(request.POST.get("proteinuria",1))
+    serum_creatinine = float(request.POST.get("serum_creatinine",0.7))
+    gamma_gtp = float(request.POST.get("gamma_gtp",35))
     
-    list_result = Pred_Model.runModel(height, weight, sex, area, systolic, diastolic, ast, alt,
+    pred_Model = Pred_Model()
+    list_result = pred_Model.runModel(height, weight, sex, area, systolic, diastolic, ast, alt,
                              blood_sugar, total_cholesterol, triglycerides,
                              hemoglobin, proteinuria, serum_creatinine, gamma_gtp)
     
