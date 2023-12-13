@@ -6,7 +6,7 @@
 
 <br>
 
-<span style='background-color:#fff5b1'>BDIA Hackathon 네이버클라우드 트랙상 수상</span>
+_🏆 BDIA Hackathon 네이버클라우드 트랙상 수상 🏆_
 
 <br>
 
