@@ -20,7 +20,7 @@ class Pred_Model :
             i += 1
             
         with open('mainapp/pyfiles/model_scaler.pickle', 'rb') as f: 
-            scaler = pickle.load(f)
+            scaler2 = pickle.load(f)
             
 
         result_bmi = weight / ((height/100)**2)
@@ -34,7 +34,7 @@ class Pred_Model :
                             triglycerides, hemoglobin, proteinuria, serum_creatinine, gamma_gtp]).transpose()
         df1.columns = col
 
-        df1 = pd.DataFrame(scaler.transform(df1), columns=col)
+        df1 = pd.DataFrame(scaler2.transform(df1), columns=col)
 
         col2 = ['시도코드', '성별코드', 'ast_alt2']
 

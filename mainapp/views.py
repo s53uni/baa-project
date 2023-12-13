@@ -44,9 +44,9 @@ def diagnosis_detail(request):
  
     completion_executor = CompletionExecutor(
         host='https://clovastudio.stream.ntruss.com',
-        api_key='NTA0MjU2MWZlZTcxNDJiY5QzHQ6hbf+RlqukhkrE6MKyQBBLMLCWc8Dw9GD3KZmZb9s7nF1fFxZ3cskKuLH1huEKzoyK1M82nxb0jZzfRvOQuhTN/JcyrWagDZn7QUTgYlZ0aFzlLnzpdpogGtOPy+BlOj3UHkqhipd6YKL3VRSgt+c07DYnStBs3zUGtpscJ7L3c7JIU1x96D8XEp30oonw9EsEfqtYLki1ylo6ptg=',
-        api_key_primary_val='5DjAyKwmAOSewiiNVGRUTqPWtY5R9M9RMpvTCBJo',
-        request_id='26b306daefad43b88b2a99c2369abc75'
+        api_key='##########api_key로 수정하기##########',
+        api_key_primary_val='##########api_key_primary_val로 수정하기##########',
+        request_id='##########request_id로 수정하기##########'
     )
     
     if request.method == 'POST':
