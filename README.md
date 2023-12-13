@@ -22,7 +22,7 @@ _🏆 BDIA Hackathon 네이버클라우드 트랙상 수상 🏆_
 <table align="center">
     <tr align="center">
         <td style="width:300px;"><a href="https://github.com/xx-Sommer-xx"><b>김소연</b></a></td>
-        <td style="width:300px;"><a href="https://github.com/"><b>강민지</b></a></td>
+        <td style="width:300px;"><a href="https://github.com/saeuggang10"><b>강민지</b></a></td>
         <td style="width:300px;"><a href="https://github.com/s53uni"><b>박시윤</b></a></td>
         <td style="width:300px;"><a href="https://github.com/Erin-53"><b>최예진</b></a></td>
     </tr>
