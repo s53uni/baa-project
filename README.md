@@ -44,6 +44,11 @@ _🏆 BDIA Hackathon 네이버클라우드 트랙상 수상 🏆_
 
 <br><br>
 
+## 📅 프로젝트 기간
+2023.12.09. ~ 2023.12.10.
+
+<br><br>
+
 ## 🖥️ 개발환경
 * Jupyter Notebook
 * Visual Studio
