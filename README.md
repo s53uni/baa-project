@@ -30,7 +30,7 @@ _🏆 BDIA Hackathon 네이버클라우드 트랙상 수상 🏆_
         <td>BE 개발<br>질병 예측 모델</td>
         <td>데이터 가공<br>질병 예측 모델</td>
         <td>FE/BE 개발<br>언어 모델 학습</td>
-        <td>BE 개발<br>질병 예측 모델</td>
+        <td>데이터 크롤링<br>질병 예측 모델</td>
     </tr>
 </table>
 
